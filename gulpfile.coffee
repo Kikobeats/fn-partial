@@ -27,6 +27,7 @@ banner = [
 
 gulp.task 'build', ->
   gulp.src path.origin
+  .pipe browserify()
   .pipe concat 'fn.partial.js'
   .pipe uglify()
   .pipe header banner, pkg: pkg
