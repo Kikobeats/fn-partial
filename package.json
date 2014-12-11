@@ -1,6 +1,6 @@
 {
   "name": "fn-partial",
-  "description": "Pass a reference to a function with parameters (as a pointers).",
+  "description": "Feel like a memory pointer. Pass a reference to a function.",
   "version": "0.12.11",
   "author": {
     "name": "Kiko Beats",
@@ -11,6 +11,9 @@
     "coffee-script": "*",
     "gulp": "*",
     "gulp-browserify": "*",
+    "gulp-concat": "*",
+    "gulp-header": "*",
+    "gulp-uglify": "*",
     "mocha": "*",
     "should": "*"
   },
@@ -24,10 +27,5 @@
   "repository": "kikobeats/fn-partial",
   "scripts": {
     "test": "sh test/test.sh"
-  },
-  "dependencies": {
-    "gulp-concat": "^2.4.2",
-    "gulp-header": "^1.2.2",
-    "gulp-uglify": "^1.0.2"
   }
 }

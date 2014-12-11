@@ -5,7 +5,7 @@
   "authors": [
     "Kiko Beats <josefrancisco.verdu@gmail.com>"
   ],
-  "description": "Pass a reference to a function with parameters (as a pointers).",
+  "description": "Feel like a memory pointer. Pass a reference to a function.",
   "license": "MIT",
   "homepage": "https://github.com/Kikobeats/fn-partial",
   "ignore": [
