@@ -14,7 +14,7 @@ players.four = 'Ben';
 console.log(numPlayers); // 3, expected 4
 delete players.four;
 
-var partial = require('..');
+var partial = require('fn-partial');
 
 var numPlayers = partial(size, players);
 console.log(numPlayers()); // 3
