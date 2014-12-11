@@ -79,9 +79,9 @@ result();
 // => console.log("Hello World");
 
 // Call a function with arguments
-var result = partial(sayHello('Kiko'));
+var result = partial(sayHello, 'Kiko', ', how are you?');
 result();
-// => console.log("Hello World, Kiko!")
+// => console.log("Hello World, Kiko!, how are you?")
 ```
 
 ## License
