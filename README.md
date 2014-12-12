@@ -1,6 +1,6 @@
 # fn-partial <a href="http://bower.io/search/?q=fn-partial"><img src="http://benschwarz.github.io/bower-badges/badge@2x.png" width="130" height="30"></a>
 
-[![Build Status](http://img.shields.io/travis/kikobeats/fn-partial/master.svg?style=flat)](https://travis-ci.org/kikobeats/fn-partial)
+[![Build Status](http://img.shields.io/travis/Kikobeats/fn-partial/master.svg?style=flat)](https://travis-ci.org/Kikobeats/fn-partial)
 [![Dependency status](http://img.shields.io/david/kikobeats/fn-partial.svg?style=flat)](https://david-dm.org/kikobeats/fn-partial)
 [![Dev Dependencies Status](http://img.shields.io/david/dev/kikobeats/fn-partial.svg?style=flat)](https://david-dm.org/kikobeats/fn-partial#info=devDependencies)
 [![NPM Status](http://img.shields.io/npm/dm/fn-partial.svg?style=flat)](https://www.npmjs.org/package/fn-partial)
