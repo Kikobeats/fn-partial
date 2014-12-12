@@ -60,14 +60,21 @@ More information and the history of this code in [StackOverflow](https://stackov
 ## Install
 
 ```bash
-npm install --save object-assign
+npm install fn-partial --save
 ```
 
 If you want to use in the browser (powered by [Browserify](http://browserify.org/)):
 
-```html
-<script src="bower_components/fn-partial/dist/fn.partial.js"></script>
+```bash
+bower install fn-partial --save
 ```
+
+and later link in your HTML:
+
+```html
+<script src="bower_components/fn-partial/dist/fn-partial.js"></script>
+```
+
 ## Usage
 
 ```js

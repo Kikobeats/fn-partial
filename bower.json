@@ -14,5 +14,12 @@
     "bower_components",
     "test",
     "tests"
+  ],
+  "keywords": [
+  "function",
+  "partial",
+  "alternative",
+  "memory",
+  "pointer"
   ]
 }
