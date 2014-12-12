@@ -3,10 +3,10 @@
 # -- Dependencies --------------------------------------------------------------
 
 gulp       = require 'gulp'
-sh         = require 'execSync'
 header     = require 'gulp-header'
 uglify     = require 'gulp-uglify'
 pkg        = require './package.json'
+browserify = require 'browserify'
 
 # -- Files ---------------------------------------------------------------------
 
@@ -22,10 +22,15 @@ banner = [
            " * @license <%= pkg.license %>"
            " */"].join("\n")
 
+options =
+  require: __dirname + '/index.js'
+  outfile: path.origin
+  entry: 'fn-partial'
+
 # -- Tasks ---------------------------------------------------------------------
 
 gulp.task 'build', ->
-  sh.run("browserify -r ./index.js:fn-partial -o #{path.origin}")
+  browserify(options).bundle()
   gulp.src path.origin
   .pipe uglify()
   .pipe header banner, pkg: pkg

@@ -1,7 +1,7 @@
 {
   "name": "fn-partial",
   "description": "Feel like a memory pointer. Pass a reference to a function.",
-  "version": "0.12.11b",
+  "version": "0.12.12",
   "author": {
     "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",
@@ -10,7 +10,6 @@
   "devDependencies": {
     "browserify": "*",
     "coffee-script": "*",
-    "execSync": "*",
     "gulp": "*",
     "gulp-header": "*",
     "gulp-uglify": "*",
