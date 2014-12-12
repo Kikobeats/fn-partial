@@ -22,7 +22,13 @@
     "node": "*"
   },
   "homepage": "https://github.com/Kikobeats/fn-partial",
-  "keywords": [],
+  "keywords": [
+  "function",
+  "partial",
+  "alternative",
+  "memory",
+  "pointer"
+  ],
   "license": "MIT",
   "main": "./index.js",
   "repository": "kikobeats/fn-partial",
