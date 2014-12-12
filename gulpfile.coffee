@@ -3,16 +3,19 @@
 # -- Dependencies --------------------------------------------------------------
 
 gulp       = require 'gulp'
+gutil      = require 'gulp-util'
+browserify = require 'browserify'
 header     = require 'gulp-header'
 uglify     = require 'gulp-uglify'
 pkg        = require './package.json'
-browserify = require 'browserify'
+source     = require 'vinyl-source-stream'
 
 # -- Files ---------------------------------------------------------------------
 
 path =
-  origin : 'dist/fn.partial.js'
-  dist   : 'dist'
+  filename : 'fn-partial.js'
+  shorcut  : 'fn-partial'
+  dist     : 'dist'
 
 banner = [
            "/**"
@@ -22,21 +25,21 @@ banner = [
            " * @license <%= pkg.license %>"
            " */"].join("\n")
 
-options =
-  require: __dirname + '/index.js'
-  outfile: path.origin
-  entry: 'fn-partial'
-
 # -- Tasks ---------------------------------------------------------------------
 
-gulp.task 'build', ->
-  browserify(options).bundle()
-  gulp.src path.origin
-  .pipe uglify()
-  .pipe header banner, pkg: pkg
-  .pipe gulp.dest path.dist
-  return
+gulp.task 'browserify', ->
+  browserify().require('./index.js', { expose: path.shorcut })
+    .bundle()
+    .pipe source(path.filename)
+    .pipe gulp.dest path.dist
+    .on('end', ->
+      gulp.src "#{path.dist}/#{path.filename}"
+      .pipe uglify()
+      .pipe header banner, pkg: pkg
+      .pipe gulp.dest path.dist
+      return
+    )
 
 gulp.task 'default', ->
-  gulp.start 'build'
+  gulp.start 'browserify'
   return

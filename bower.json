@@ -1,6 +1,6 @@
 {
   "name": "fn-partial",
-  "main": "dist/fn.partial.js",
+  "main": "dist/fn-partial.js",
   "version": "0.12.12",
   "authors": [
     "Kiko Beats <josefrancisco.verdu@gmail.com>"
