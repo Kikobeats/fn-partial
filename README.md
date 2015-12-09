@@ -102,7 +102,7 @@ players = {
   three: 'Xavi'
 }
 
-Object.defineProperty(players, 'length', {
+Object.defineProperty(players, 'size', {
   get: function () { return Object.keys(this).length }
 })
 ```
