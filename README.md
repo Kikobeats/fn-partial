@@ -91,6 +91,22 @@ result();
 // => console.log("Hello World, Kiko!, how are you?")
 ```
 
+## Extra
+
+Notes that you can get the same behvaio using [Object.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty):
+
+```js
+players = {
+  one: 'Kiko',
+  two: 'Ricard',
+  three: 'Xavi'
+}
+
+Object.defineProperty(players, 'length', {
+  get: function () { return Object.keys(this).length }
+})
+```
+
 ## License
 
 MIT © [Kiko Beats](http://www.kikobeats.com)
