@@ -25,9 +25,9 @@ var players = {
 and you have a function that return the number of players in the collection:
 
 ```js
-var size = function(objt){
-  return Object.keys(objt).length;
-};
+function size(objt) {
+  return Object.keys(objt).length
+}
 ```
 
 Now, you want to know the numbers of players, and you need to have 4 players for start a new game.
@@ -35,10 +35,10 @@ Now, you want to know the numbers of players, and you need to have 4 players for
 If you do something like this:
 
 ```js
-var numPlayers = size(players);
-console.log(numPlayers); // => 3
-players.four = 'Ben';
-console.log(numPlayers); // => 3, expected 4 :(
+var numPlayers = size(players)
+console.log(numPlayers) // => 3
+players.four = 'Ben'
+console.log(numPlayers) // => 3, expected 4 :(
 ```
 
 It's fail because the value is assigned when you call the function.
@@ -49,13 +49,29 @@ With this package you can simulate something like that.
 
 ```js
 var partial = require('fn-partial')
-var numPlayers = partial(size, players);
-console.log(numPlayers()); // => 3
-players.four = 'Ben';
-console.log(numPlayers()); // => 4 YEAH!
+var numPlayers = partial(size, players)
+console.log(numPlayers()) // => 3
+players.four = 'Ben'
+console.log(numPlayers()) // => 4 YEAH!
 ```
 
 More information and the history of this code in [StackOverflow](https://stackoverflow.com/questions/373157/how-can-i-pass-a-reference-to-a-function-with-parameters)
+
+## Extra
+
+### Using Bind
+
+```js
+var numPlayers = size.bind(null, players)
+```
+
+### Using defineProperty
+
+```js
+Object.defineProperty(players, 'size', {
+  get: function () { return Object.keys(this).length }
+})
+```
 
 ## Install
 
@@ -78,33 +94,17 @@ and later link in your HTML:
 ## Usage
 
 ```js
-var partial = require('fn-partial');
+var partial = require('fn-partial')
 
 // Call a function without arguments
-var result = partial(sayHello());
-result();
-// => console.log("Hello World");
+var result = partial(sayHello())
+result()
+// => console.log('Hello World')
 
 // Call a function with arguments
-var result = partial(sayHello, 'Kiko', ', how are you?');
+var result = partial(sayHello, 'Kiko', ', how are you?')
 result();
-// => console.log("Hello World, Kiko!, how are you?")
-```
-
-## Extra
-
-Notes that you can get the same behvaio using [Object.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty):
-
-```js
-players = {
-  one: 'Kiko',
-  two: 'Ricard',
-  three: 'Xavi'
-}
-
-Object.defineProperty(players, 'size', {
-  get: function () { return Object.keys(this).length }
-})
+// => console.log('Hello World, Kiko!, how are you?')
 ```
 
 ## License

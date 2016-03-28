@@ -33,6 +33,6 @@
   "main": "./index.js",
   "repository": "kikobeats/fn-partial",
   "scripts": {
-    "test": "sh test/test.sh"
+    "test": "mocha"
   }
 }
